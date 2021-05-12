@@ -1,0 +1,1 @@
+<h1>{{__('message.page_message')}}</h1>
