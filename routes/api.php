@@ -58,3 +58,9 @@ Route::group(['middleware' => 'auth:api'], function(){
 Route::post('details', 'App\Http\Controllers\API\LoginControllerAPI@details');
 
 });
+
+//next api
+Route::apiResource('/products', App\Http\Controllers\ProductController::class);
+Route::group(['prefix'=>'products'],function(){
+    Route::apiResource('/{products}/reviews',App\Http\Controllers\ReviewController::class);
+});
