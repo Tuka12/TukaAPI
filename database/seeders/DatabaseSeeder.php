@@ -5,7 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\StudentSeeder;
 use App\Models\Student;
-
+use App\Models\Review;
+use App\Models\Product;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,6 +21,14 @@ class DatabaseSeeder extends Seeder
         /*$this->call([
             StudentSeeder::class
         ]);*/
-        \App\Models\Student::factory(100)->create();
+        //\App\Models\Student::factory(100)->create();
+
+       /* $this->call([
+            ProductSeeder::class,
+            ReviewSeeder::class
+        ]);*/
+
+        \App\Models\Product::factory(100)->create();
+        \App\Models\Review::factory(300)->create();
     }
 }

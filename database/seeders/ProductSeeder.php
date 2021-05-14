@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
@@ -13,6 +13,13 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        //0
+       /* $faker = \Faker\Factory::create();
+         DB::table("products")->insert([
+            "name" => $faker->word,
+            "detail" => $faker->paragraph,
+            "price" => $faker->numberBetween(100,1000),
+            "stock" => $faker->randomDigit,
+            "discount" => $faker->numberBetween(2, 30),        
+        ]);*/
     }
 }
