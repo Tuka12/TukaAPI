@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class StudentSeeder extends Seeder
@@ -13,6 +13,14 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = \Faker\Factory::create();
+        DB::table("students")->insert([
+            "name" => $faker->name(),
+            "email" => $faker->safeEmail,
+            "mobile" => $faker->phoneNumber,
+            "age" => $faker->numberBetween(25, 50),
+            "gender" => $faker->randomElement(["male", "female", "others"]),
+            "address_info" => $faker->address,
+        ]);
     }
 }
